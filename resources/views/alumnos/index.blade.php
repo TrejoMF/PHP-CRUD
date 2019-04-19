@@ -41,5 +41,8 @@
         @endforeach
     </tbody>
   </table>
+  <div>
+      <a href="/">Regresar al menu</a>
+  </div>
 <div>
 @endsection

@@ -23,18 +23,19 @@
       <form method="post" action="{{ route('alumnos.store') }}">
           <div class="form-group">
               @csrf
-              <label for="name">Nombre del alumno:</label>
+              <label for="nombre">Nombre del alumno:</label>
               <input type="text" class="form-control" name="nombre"/>
           </div>
           <div class="form-group">
-              <label for="price">Numero de control:</label>
+              <label for="nocontrol">Numero de control:</label>
               <input type="text" maxlength="8" class="form-control" name="nocontrol"/>
           </div>
           <div class="form-group">
-              <label for="quantity">Semestre:</label>
+              <label for="semestre">Semestre:</label>
               <input type="text" maxlength="1" class="form-control" name="semestre"/>
           </div>
           <button type="submit" class="btn btn-primary">Registrar</button>
+          <a href="/">Regresar al menu</a>
       </form>
   </div>
 </div>

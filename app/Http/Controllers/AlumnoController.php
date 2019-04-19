@@ -80,7 +80,9 @@ class AlumnoController extends Controller
     */
     public function edit($id)
     {
-    //
+        $alumno = Alumno::find($id);
+
+        return view('alumnos.edit', compact('alumno'));
     }
 
     /**
@@ -92,7 +94,19 @@ class AlumnoController extends Controller
     */
     public function update(Request $request, $id)
     {
-    //
+        $request->validate([
+            'nombre'=>'required',
+            'nocontrol'=> 'required',
+            'semestre' => 'required|integer'
+          ]);
+
+          $alumno = Alumno::find($id);
+          $alumno->nombre = $request->get('nombre');
+          $alumno->nocontrol = $request->get('nocontrol');
+          $alumno->semestre = $request->get('semestre');
+          $alumno->save();
+
+          return redirect('/alumnos')->with('success', 'Información editada correctamente');
     }
 
     /**
@@ -103,6 +117,9 @@ class AlumnoController extends Controller
     */
     public function destroy($id)
     {
-    //
+        $alumno = Alumno::find($id);
+        $alumno->delete();
+
+        return redirect('/alumnos')->with('success', 'Registro eliminado correctamente');
     }
 }
