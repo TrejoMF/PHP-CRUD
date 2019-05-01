@@ -122,4 +122,25 @@ class AlumnoController extends Controller
 
         return redirect('/alumnos')->with('success', 'Registro eliminado correctamente');
     }
+
+
+    public function inicio()
+    {
+        return view('ejemplo.inicio');
+    }
+
+    public function perfil()
+    {
+        return view('ejemplo.perfil');
+    }
+
+    public function portafolio()
+    {
+        return view('ejemplo.portafolio');
+    }
+
+    public function contacto()
+    {
+        return view('ejemplo.contacto');
+    }
 }

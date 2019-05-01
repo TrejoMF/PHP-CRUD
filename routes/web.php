@@ -15,4 +15,20 @@ Route::get('/', function () {
     return view('alumnos.main');
 });
 
+Route::get('/inicio', function () {
+    return view('ejemplo.inicio');
+});
+
+Route::get('/perfil', function () {
+    return view('ejemplo.perfil');
+});
+
+Route::get('/portafolio', function () {
+    return view('ejemplo.portafolio');
+});
+
+Route::get('/contacto', function () {
+    return view('ejemplo.contacto');
+});
+
 Route::resource('alumnos', 'AlumnoController');
